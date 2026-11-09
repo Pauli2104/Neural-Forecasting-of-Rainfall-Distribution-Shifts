@@ -1,0 +1,16 @@
+dropped,k_a,k_b,wins,null_p,expected,p_two_sided,significant,wins_shift_vs_full,flips_verdict
+(none: full pool),3,11,0,0.2143,1.929,0.2198,False,0,False
+DecisionTree,3,10,0,0.2308,2.077,0.1297,False,0,False
+ElasticNet,3,10,0,0.2308,2.077,0.1297,False,0,False
+ExtraTrees,3,10,0,0.2308,2.077,0.1297,False,0,False
+GradBoost,3,10,0,0.2308,2.077,0.1297,False,0,False
+Linear,3,10,0,0.2308,2.077,0.1297,False,0,False
+MLP-128-64,2,11,0,0.1538,1.385,0.3715,False,0,False
+MLP-32-16,2,11,0,0.1538,1.385,0.3715,False,0,False
+MLP-64,2,11,0,0.1538,1.385,0.3715,False,0,False
+Mean,3,10,0,0.2308,2.077,0.1297,False,0,False
+Persistence,3,10,0,0.2308,2.077,0.1297,False,0,False
+RandomForest,3,10,0,0.2308,2.077,0.1297,False,0,False
+Ridge,3,10,0,0.2308,2.077,0.1297,False,0,False
+SVR-RBF,3,10,0,0.2308,2.077,0.1297,False,0,False
+kNN-5,3,10,0,0.2308,2.077,0.1297,False,0,False

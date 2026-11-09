@@ -1,0 +1,132 @@
+\begin{table}[t]
+\centering
+\caption{Integrity audit of the daily record and the documented flood catalogue}
+\label{tab:audit}
+\begin{tabular}{lrrrrrrrrrrrrr}
+\toprule
+station & first & last & n\_days & calendar\_gaps & duplicate\_dates & n\_variables & nan\_cells & precip\_nan & precip\_negative & precip\_max\_mm & complete\_hydro\_years & flood\_events & flood\_years \\
+\midrule
+Catamarca & 1981-01-01 & 2024-07-01 & 15888 & 0 & 0 & 22 & 0 & 0 & 0 & 244.700 & 43 & 20 & 18 \\
+Cordoba & 1981-01-01 & 2024-07-01 & 15888 & 0 & 0 & 22 & 0 & 0 & 0 & 139.900 & 43 & 9 & 9 \\
+Lamadrid & 1981-01-01 & 2024-07-01 & 15888 & 0 & 0 & 22 & 0 & 0 & 0 & 195.310 & 43 & 14 & 13 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Test MASE by model, summarised across seeds. Optimism is the gap between the mean and the best seed}
+\label{tab:seeds}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+station & target & model & family & median & q05 & q95 & range & optimism \\
+\midrule
+Cordoba & D\_KL & ElasticNet & conventional & 0.637 & 0.637 & 0.637 & 0.000 & 0.000 \\
+Cordoba & D\_B & SVR-RBF & conventional & 0.712 & 0.712 & 0.712 & 0.000 & 0.000 \\
+Cordoba & W1 & ElasticNet & conventional & 0.761 & 0.761 & 0.761 & 0.000 & 0.000 \\
+Cordoba & D\_KL & Persistence & conventional & 0.817 & 0.817 & 0.817 & 0.000 & -0.000 \\
+Cordoba & D\_KL & Mean & conventional & 0.840 & 0.840 & 0.840 & 0.000 & 0.000 \\
+Catamarca & D\_B & GradBoost & conventional & 0.878 & 0.877 & 0.917 & 0.044 & 0.015 \\
+Cordoba & D\_B & Ridge & conventional & 0.923 & 0.923 & 0.923 & 0.000 & 0.000 \\
+Cordoba & D\_B & Persistence & conventional & 0.965 & 0.965 & 0.965 & 0.000 & 0.000 \\
+Cordoba & W1 & Persistence & conventional & 0.969 & 0.969 & 0.969 & 0.000 & 0.000 \\
+Catamarca & D\_B & Persistence & conventional & 1.000 & 1.000 & 1.000 & 0.000 & 0.000 \\
+Catamarca & D\_KL & Persistence & conventional & 1.056 & 1.056 & 1.056 & 0.000 & 0.000 \\
+Catamarca & D\_B & RandomForest & conventional & 1.058 & 1.047 & 1.088 & 0.045 & 0.019 \\
+Cordoba & W1 & Ridge & conventional & 1.183 & 1.183 & 1.183 & 0.000 & 0.000 \\
+Lamadrid & D\_B & Persistence & conventional & 1.851 & 1.851 & 1.851 & 0.000 & 0.000 \\
+Lamadrid & W1 & Persistence & conventional & 1.929 & 1.929 & 1.929 & 0.000 & 0.000 \\
+Catamarca & W1 & Persistence & conventional & 2.086 & 2.086 & 2.086 & 0.000 & 0.000 \\
+Catamarca & D\_KL & DecisionTree & conventional & 2.301 & 2.063 & 2.883 & 0.911 & 0.392 \\
+Catamarca & D\_KL & ElasticNet & conventional & 2.314 & 2.314 & 2.314 & 0.000 & 0.000 \\
+Lamadrid & W1 & ElasticNet & conventional & 2.932 & 2.932 & 2.932 & 0.000 & 0.000 \\
+Catamarca & W1 & ElasticNet & conventional & 3.001 & 3.001 & 3.001 & 0.000 & -0.000 \\
+Catamarca & W1 & DecisionTree & conventional & 3.415 & 3.356 & 3.461 & 0.117 & 0.061 \\
+Lamadrid & D\_KL & Persistence & conventional & 3.957 & 3.957 & 3.957 & 0.000 & 0.000 \\
+Lamadrid & D\_B & Ridge & conventional & 5.194 & 5.194 & 5.194 & 0.000 & 0.000 \\
+Lamadrid & D\_B & Linear & conventional & 5.220 & 5.220 & 5.220 & 0.000 & 0.000 \\
+Lamadrid & W1 & DecisionTree & conventional & 6.072 & 5.770 & 6.339 & 0.632 & 0.323 \\
+Lamadrid & D\_KL & Linear & conventional & 10.269 & 10.269 & 10.269 & 0.000 & 0.000 \\
+Lamadrid & D\_KL & Ridge & conventional & 10.369 & 10.369 & 10.369 & 0.000 & 0.000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Best neural versus best conventional model in each of the 9 station--target blocks. MASE, lower is better. The ordering is not resolvable at this sample size: 9 models lie within one critical difference of the best mean rank}
+\label{tab:winloss}
+\begin{tabular}{lrrr}
+\toprule
+block & best\_neural & best\_conventional & winner \\
+\midrule
+Catamarca / D\_B & 166.416 & 0.878 & conventional \\
+Catamarca / D\_KL & 19.327 & 1.056 & conventional \\
+Catamarca / W1 & 6.059 & 2.086 & conventional \\
+Cordoba / D\_B & 103.896 & 0.712 & conventional \\
+Cordoba / D\_KL & 8.285 & 0.637 & conventional \\
+Cordoba / W1 & 2.844 & 0.761 & conventional \\
+Lamadrid / D\_B & 302.732 & 1.851 & conventional \\
+Lamadrid / D\_KL & 35.695 & 3.957 & conventional \\
+Lamadrid / W1 & 9.594 & 1.929 & conventional \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Spread in test MASE attributable to each design factor, measured as the mean within-cell range}
+\label{tab:factors}
+\begin{tabular}{lrrrrrr}
+\toprule
+factor & n\_cells & mean\_range & median\_range & q90\_range & max\_range & relative\_to\_smallest \\
+\midrule
+lag window & 126 & 39.641 & 1.074 & 45.516 & 1081.873 & 2.717 \\
+feature set & 126 & 30.102 & 0.579 & 29.416 & 808.126 & 2.063 \\
+random seed & 126 & 14.591 & 0.010 & 18.146 & 602.704 & 1.000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Discrimination of documented flood years by annual indicator, pooled over stations}
+\label{tab:proxy}
+\begin{tabular}{lrrrrr}
+\toprule
+indicator & kind & auroc & auroc\_lo & auroc\_hi & p\_perm \\
+\midrule
+RX1day & descriptor & 0.623 & 0.505 & 0.716 & 0.034 \\
+D\_KL & target & 0.614 & 0.490 & 0.727 & 0.041 \\
+W1 & target & 0.598 & 0.482 & 0.720 & 0.086 \\
+EMD & target & 0.598 & 0.482 & 0.720 & 0.086 \\
+SDII & descriptor & 0.594 & 0.494 & 0.685 & 0.101 \\
+RX3day & descriptor & 0.585 & 0.465 & 0.683 & 0.128 \\
+CDD & descriptor & 0.579 & 0.469 & 0.698 & 0.168 \\
+RX5day & descriptor & 0.575 & 0.459 & 0.693 & 0.186 \\
+R20mm & descriptor & 0.567 & 0.461 & 0.658 & 0.226 \\
+R99p & descriptor & 0.563 & 0.456 & 0.657 & 0.285 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Leave-one-year-out ablation of daily post-processing components, scored by CRPS}
+\label{tab:postproc}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+config & n & mean & sd & median & q05 & q95 & delta\_vs\_full & pct\_vs\_full \\
+\midrule
+minus\_shuffle & 129 & 1.558 & 0.454 & 1.575 & 0.739 & 2.368 & -1.476 & -48.651 \\
+climatology & 129 & 1.663 & 0.490 & 1.681 & 0.800 & 2.523 & -1.371 & -45.183 \\
+qmap\_only & 129 & 1.667 & 0.490 & 1.693 & 0.796 & 2.531 & -1.367 & -45.060 \\
+minus\_qmap & 129 & 2.904 & 0.684 & 3.049 & 1.742 & 3.931 & -0.130 & -4.279 \\
+minus\_occurrence & 129 & 3.031 & 0.701 & 3.218 & 1.828 & 4.072 & -0.003 & -0.104 \\
+full & 129 & 3.034 & 0.697 & 3.155 & 1.830 & 4.063 & 0.000 & 0.000 \\
+minus\_seasonal & 129 & 3.039 & 0.686 & 3.207 & 1.896 & 4.018 & 0.005 & 0.172 \\
+minus\_nqt & 129 & 3.045 & 0.692 & 3.201 & 1.873 & 4.164 & 0.012 & 0.384 \\
+minus\_intensity & 129 & 3.054 & 0.705 & 3.264 & 1.809 & 4.055 & 0.021 & 0.679 \\
+\bottomrule
+\end{tabular}
+\end{table}

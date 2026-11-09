@@ -1,0 +1,10 @@
+{
+  "best_target": "D_KL",
+  "best_target_auroc": 0.6138513513513514,
+  "best_target_p": 0.041,
+  "best_descriptor": "RX1day",
+  "best_descriptor_auroc": 0.6229729729729729,
+  "best_descriptor_p": 0.034,
+  "descriptor_beats_all_targets": true,
+  "margin": 0.009121621621621556
+}

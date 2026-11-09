@@ -1,0 +1,4 @@
+station,first,last,n_days,calendar_gaps,duplicate_dates,n_variables,nan_cells,precip_nan,precip_negative,precip_max_mm,complete_hydro_years,flood_events,flood_years
+Catamarca,1981-01-01,2024-07-01,15888,0,0,22,0,0,0,244.7,43,20,18
+Cordoba,1981-01-01,2024-07-01,15888,0,0,22,0,0,0,139.9,43,9,9
+Lamadrid,1981-01-01,2024-07-01,15888,0,0,22,0,0,0,195.31,43,14,13

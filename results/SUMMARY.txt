@@ -1,0 +1,135 @@
+RAINFALL-SHIFT PIPELINE - RUN SUMMARY
+============================================================
+
+DATA
+  station      first       last  n_days  calendar_gaps  duplicate_dates  n_variables  nan_cells  precip_nan  precip_negative  precip_max_mm  complete_hydro_years  flood_events  flood_years
+Catamarca 1981-01-01 2024-07-01   15888              0                0           22          0           0                0         244.70                    43            20           18
+  Cordoba 1981-01-01 2024-07-01   15888              0                0           22          0           0                0         139.90                    43             9            9
+ Lamadrid 1981-01-01 2024-07-01   15888              0                0           22          0           0                0         195.31                    43            14           13
+
+PROPOSITION 1 (EMD = W1 on a unit-spaced ordered support)
+  n = 117,  Pearson r = 1.0000000000,  max |diff| = 1.987e-14
+  verdict: identical -> 3 independent targets
+
+LEAKAGE (window overlap between train and test rows)
+  mean shared fraction 0.000,  max 0.000
+  test rows with any overlap: 0 of 72
+
+BEST THREE MODELS PER BLOCK (median test MASE across seeds)
+  station target        model       family  median    q05    q95  range  optimism
+  Cordoba   D_KL   ElasticNet conventional   0.637  0.637  0.637  0.000     0.000
+  Cordoba    D_B      SVR-RBF conventional   0.712  0.712  0.712  0.000     0.000
+  Cordoba     W1   ElasticNet conventional   0.761  0.761  0.761  0.000     0.000
+  Cordoba   D_KL  Persistence conventional   0.817  0.817  0.817  0.000    -0.000
+  Cordoba   D_KL         Mean conventional   0.840  0.840  0.840  0.000     0.000
+Catamarca    D_B    GradBoost conventional   0.878  0.877  0.917  0.044     0.015
+  Cordoba    D_B        Ridge conventional   0.923  0.923  0.923  0.000     0.000
+  Cordoba    D_B  Persistence conventional   0.965  0.965  0.965  0.000     0.000
+  Cordoba     W1  Persistence conventional   0.969  0.969  0.969  0.000     0.000
+Catamarca    D_B  Persistence conventional   1.000  1.000  1.000  0.000     0.000
+Catamarca   D_KL  Persistence conventional   1.056  1.056  1.056  0.000     0.000
+Catamarca    D_B RandomForest conventional   1.058  1.047  1.088  0.045     0.019
+  Cordoba     W1        Ridge conventional   1.183  1.183  1.183  0.000     0.000
+ Lamadrid    D_B  Persistence conventional   1.851  1.851  1.851  0.000     0.000
+ Lamadrid     W1  Persistence conventional   1.929  1.929  1.929  0.000     0.000
+Catamarca     W1  Persistence conventional   2.086  2.086  2.086  0.000     0.000
+Catamarca   D_KL DecisionTree conventional   2.301  2.063  2.883  0.911     0.392
+Catamarca   D_KL   ElasticNet conventional   2.314  2.314  2.314  0.000     0.000
+ Lamadrid     W1   ElasticNet conventional   2.932  2.932  2.932  0.000     0.000
+Catamarca     W1   ElasticNet conventional   3.001  3.001  3.001  0.000    -0.000
+Catamarca     W1 DecisionTree conventional   3.415  3.356  3.461  0.117     0.061
+ Lamadrid   D_KL  Persistence conventional   3.957  3.957  3.957  0.000     0.000
+ Lamadrid    D_B        Ridge conventional   5.194  5.194  5.194  0.000     0.000
+ Lamadrid    D_B       Linear conventional   5.220  5.220  5.220  0.000     0.000
+ Lamadrid     W1 DecisionTree conventional   6.072  5.770  6.339  0.632     0.323
+ Lamadrid   D_KL       Linear conventional  10.269 10.269 10.269  0.000     0.000
+ Lamadrid   D_KL        Ridge conventional  10.369 10.369 10.369  0.000     0.000
+
+MODEL COMPARISON
+  Friedman chi2 = 80.421, p = 9.19e-12
+  Iman-Davenport F = 17.588, p = 9.78e-21
+  Nemenyi critical difference = 6.614
+  mean ranks: Persistence 1.56, ElasticNet 3.94, GradBoost 4.89, ExtraTrees 5.56, RandomForest 6.00, Ridge 6.11, DecisionTree 6.67, Linear 6.78, SVR-RBF 7.78, Mean 8.39, kNN-5 8.56, MLP-128-64 11.78, MLP-64 13.44, MLP-32-16 13.56
+
+PER-BLOCK WIN COUNT (best neural vs best conventional)
+           block best_neural_model  best_neural best_conventional_model  best_conventional       winner
+ Catamarca / D_B        MLP-128-64      166.416               GradBoost              0.878 conventional
+Catamarca / D_KL        MLP-128-64       19.327             Persistence              1.056 conventional
+  Catamarca / W1        MLP-128-64        6.059             Persistence              2.086 conventional
+   Cordoba / D_B        MLP-128-64      103.896                 SVR-RBF              0.712 conventional
+  Cordoba / D_KL        MLP-128-64        8.285              ElasticNet              0.637 conventional
+    Cordoba / W1        MLP-128-64        2.844              ElasticNet              0.761 conventional
+  Lamadrid / D_B        MLP-128-64      302.732             Persistence              1.851 conventional
+ Lamadrid / D_KL        MLP-128-64       35.695             Persistence              3.957 conventional
+   Lamadrid / W1        MLP-128-64        9.594             Persistence              1.929 conventional
+  neural wins 0 of 9 blocks  (3 stations x 3 targets - the denominator is counted, not assumed)
+  critical difference 6.614; 9 models lie within one CD of the best mean rank
+  RESOLVABLE: False - the leading models are separated by less than one critical difference, so a per-block win count reflects noise, not ordering
+  quote this count only together with the line above.
+
+NEURAL VERSUS CONVENTIONAL
+  median MASE neural 24.181 vs conventional 2.897
+  Mann-Whitney p = 1.76e-29; P(neural better) = 0.091
+
+DESIGN FACTORS (spread in test MASE induced by each)
+     factor  n_cells  mean_range  median_range  q90_range  max_range  relative_to_smallest
+ lag window      126      39.641         1.074     45.516   1081.873                 2.717
+feature set      126      30.102         0.579     29.416    808.126                 2.063
+random seed      126      14.591         0.010     18.146    602.704                 1.000
+
+EXPLANATIONS
+  cross-method Spearman: median 0.345, range -0.156 to 1.000
+  faithful (top-k ablation beats random, p<0.05): 20/36 model-blocks
+  rank stability by input-noise scale: 0->0.661, 0.01->0.569, 0.05->0.538
+
+FLOOD-YEAR DISCRIMINATION (pooled, top 10 by AUROC)
+indicator       kind  auroc  auroc_lo  auroc_hi  p_perm
+   RX1day descriptor  0.623     0.505     0.716   0.034
+     D_KL     target  0.614     0.490     0.727   0.041
+       W1     target  0.598     0.482     0.720   0.086
+      EMD     target  0.598     0.482     0.720   0.086
+     SDII descriptor  0.594     0.494     0.685   0.101
+   RX3day descriptor  0.585     0.465     0.683   0.128
+      CDD descriptor  0.579     0.469     0.698   0.168
+   RX5day descriptor  0.575     0.459     0.693   0.186
+    R20mm descriptor  0.567     0.461     0.658   0.226
+     R99p descriptor  0.563     0.456     0.657   0.285
+
+HEADLINE
+  best shift target : D_KL AUROC 0.614 (p=0.041)
+  best raw descriptor: RX1day AUROC 0.623 (p=0.034)
+  a raw descriptor outperforms every shift target: True
+
+POST-PROCESSING ABLATION (leave-one-year-out)
+  by CRPS (marginal accuracy):
+          config   mean  delta_vs_full  pct_vs_full
+   minus_shuffle 1.5578        -1.4759     -48.6509
+     climatology 1.6630        -1.3707     -45.1828
+       qmap_only 1.6667        -1.3670     -45.0602
+      minus_qmap 2.9039        -0.1298      -4.2794
+minus_occurrence 3.0306        -0.0032      -0.1039
+            full 3.0337         0.0000       0.0000
+  minus_seasonal 3.0389         0.0052       0.1718
+       minus_nqt 3.0454         0.0117       0.3841
+ minus_intensity 3.0543         0.0206       0.6789
+  by lag-1 autocorrelation error (temporal structure):
+          config   mean  delta_vs_full  pct_vs_full
+  minus_seasonal 0.0876        -0.0023      -2.5232
+      minus_qmap 0.0886        -0.0012      -1.3172
+            full 0.0898         0.0000       0.0000
+       minus_nqt 0.0931         0.0032       3.6050
+minus_occurrence 0.0932         0.0034       3.7895
+ minus_intensity 0.0947         0.0049       5.4632
+   minus_shuffle 0.1776         0.0877      97.6685
+     climatology 0.2423         0.1525     169.7443
+       qmap_only 0.2430         0.1532     170.5396
+  components whose removal significantly worsens CRPS (Wilcoxon, Holm):
+ component  median_delta  p_holm  worse_than_full
+ intensity        0.0277  0.4243            False
+       nqt        0.0202  0.5084            False
+occurrence        0.0088  1.0000            False
+  seasonal        0.0006  1.0000            False
+      qmap       -0.1007  0.0000            False
+   shuffle       -1.5762  0.0000            False
+  note: a component that costs CRPS may still earn its place on structure;
+        the Schaake shuffle is the clear case.

@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Pipeline scratch. The committed results/ directory is the published run;
+# alternative runs should go to their own --out directory, which this ignores.
+results_*/
+out/
+*.log
+
+# Never commit credentials
+.env

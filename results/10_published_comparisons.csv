@@ -1,0 +1,3 @@
+comparison,source,wins,n_blocks,k_a,k_b,null_p,expected_wins,p_candidate_aware,p_fair_coin,verdict_changes
+"Arsenault et al. 2023: LSTM vs per-basin best of 18, 86% of 148 basins",doi:10.5194/hess-27-139-2023,127,148,1,18,0.0526,7.789,2.1354335348202605e-138,1.1113341249848234e-19,False
+"Kratzert et al. 2019: one model vs one ensemble, 2 of 447 basins",doi:10.5194/hess-23-5089-2019,2,447,1,1,0.5,223.5,5.5103833438174006e-130,5.5103833438174006e-130,False

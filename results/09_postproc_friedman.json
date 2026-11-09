@@ -1,0 +1,22 @@
+{
+  "n_blocks": 129,
+  "k_models": 9,
+  "friedman_chi2": 767.4046511627903,
+  "friedman_p": 2.1748500050034406e-160,
+  "iman_davenport_F": 371.23780059063347,
+  "iman_davenport_p": 2.1268209942098457e-296,
+  "df1": 8,
+  "df2": 1024,
+  "mean_ranks": {
+    "minus_shuffle": 1.0077519379844961,
+    "climatology": 2.441860465116279,
+    "qmap_only": 2.550387596899225,
+    "minus_qmap": 5.069767441860465,
+    "full": 6.5271317829457365,
+    "minus_occurrence": 6.689922480620155,
+    "minus_seasonal": 6.767441860465116,
+    "minus_nqt": 6.844961240310077,
+    "minus_intensity": 7.10077519379845
+  },
+  "nemenyi_cd": 1.0577732205187043
+}

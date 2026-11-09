@@ -1,0 +1,24 @@
+{
+  "metric": "test_MASE",
+  "aggregation": "median",
+  "n_stations": 3,
+  "n_targets": 3,
+  "n_blocks": 9,
+  "neural_wins": 0,
+  "conventional_wins": 9,
+  "ties": 0,
+  "neural_models": [
+    "MLP-128-64",
+    "MLP-32-16",
+    "MLP-64"
+  ],
+  "critical_difference": 6.614177197505371,
+  "n_models_within_cd_of_best": 9,
+  "resolvable": false,
+  "caveat": "the leading models are separated by less than one critical difference, so a per-block win count reflects noise, not ordering",
+  "alternate_classification_skipped": {
+    "not_in_this_model_zoo": [
+      "MLP-flat"
+    ]
+  }
+}

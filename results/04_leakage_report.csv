@@ -1,0 +1,10 @@
+station,target,win_years,mean_shared_fraction,max_shared_fraction,n_test_rows_with_overlap,n_test_rows,gap_years
+Catamarca,D_KL,5,0.0,0.0,0,8,7
+Catamarca,D_B,5,0.0,0.0,0,8,7
+Catamarca,W1,5,0.0,0.0,0,8,7
+Cordoba,D_KL,5,0.0,0.0,0,8,7
+Cordoba,D_B,5,0.0,0.0,0,8,7
+Cordoba,W1,5,0.0,0.0,0,8,7
+Lamadrid,D_KL,5,0.0,0.0,0,8,7
+Lamadrid,D_B,5,0.0,0.0,0,8,7
+Lamadrid,W1,5,0.0,0.0,0,8,7

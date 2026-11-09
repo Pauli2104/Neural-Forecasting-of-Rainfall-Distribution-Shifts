@@ -1,0 +1,5 @@
+scenario,tau,n_blocks,k_a,k_b,n_sim,nominal,binomial_size,profile_permutation_size
+persistent model effects,0.0,9,3,11,1200,0.05,0.0317,0.0092
+persistent model effects,0.5,9,3,11,1200,0.05,0.0742,0.0117
+persistent model effects,1.0,9,3,11,1200,0.05,0.14,0.0092
+persistent model effects,2.0,9,3,11,1200,0.05,0.1733,0.0067

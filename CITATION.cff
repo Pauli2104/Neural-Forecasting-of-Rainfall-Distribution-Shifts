@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite both the software and the paper it accompanies."
+title: "XAI_Rfpipe: reproducible pipeline for explainable neural forecasting of rainfall-distribution shifts"
+abstract: >-
+  End-to-end pipeline reproducing every experiment, statistical test, table and
+  result figure in "Best of how many? Candidate-count bias in environmental
+  model benchmarking": divergence-target construction from daily reanalysis, a
+  model-family comparison under chronological splits, and the resolvability
+  audit - a candidate-aware reference null for family win counts, a
+  randomisation test by common relabelling of model identities, a prospective
+  design report, pool-sensitivity analysis, and a simulation study bounding
+  where the reference null holds and where it fails.
+type: software
+license: MIT
+version: 1.0.0
+date-released: "2026-11-09"
+repository-code: "https://github.com/Pauli2104/Neural-Forecasting-of-Rainfall-Distribution-Shifts"
+keywords:
+  - hydrology
+  - rainfall
+  - distribution shift
+  - explainable machine learning
+  - reproducibility
+  - small-sample inference
+authors:
+  - family-names: "Otaño"
+    given-names: "Paula"
+    affiliation: "Universidad Tecnológica Nacional, Facultad Regional Córdoba, Córdoba, Argentina"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # TODO: add before release
+  # TODO: list the remaining co-authors in the agreed submission order, with ORCID iDs.
+
+preferred-citation:
+  type: article
+  title: "Best of how many? Candidate-count bias in environmental model benchmarking"
+  journal: "Environmental Modelling & Software"
+  year: 2026
+  status: submitted
+  authors:
+    - family-names: "Otaño"
+      given-names: "Paula"
+  # TODO: complete the author list, and add doi/volume/pages once accepted.
