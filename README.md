@@ -5,7 +5,7 @@
 
 Every experiment, statistical test, table and result figure in **"Best of how
 many? Candidate-count bias in environmental model benchmarking"** (submitted to
-*Environmental Modelling & Software*), from the raw daily files to the numbers
+*Water Resourses Management*), from the raw daily files to the numbers
 in the paper.
 
 The study asks how much can be concluded from a machine-learning study of
